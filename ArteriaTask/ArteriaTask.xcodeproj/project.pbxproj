@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		5977261B24DD339400F8654F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977261A24DD339400F8654F /* AppDelegate.swift */; };
 		5977261D24DD339400F8654F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977261C24DD339400F8654F /* SceneDelegate.swift */; };
-		5977261F24DD339400F8654F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977261E24DD339400F8654F /* ViewController.swift */; };
 		5977262224DD339400F8654F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5977262024DD339400F8654F /* Main.storyboard */; };
 		5977262424DD339A00F8654F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5977262324DD339A00F8654F /* Assets.xcassets */; };
 		5977262724DD339A00F8654F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5977262524DD339A00F8654F /* LaunchScreen.storyboard */; };
+		5977263224DD357B00F8654F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977263124DD357B00F8654F /* ListViewController.swift */; };
+		5977263524DD3B3700F8654F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977263324DD3B3700F8654F /* ListTableViewCell.swift */; };
+		5977263624DD3B3700F8654F /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5977263424DD3B3700F8654F /* ListTableViewCell.xib */; };
+		5977263824DD4A0300F8654F /* OrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977263724DD4A0300F8654F /* OrderInfo.swift */; };
+		5977263B24DD4A3300F8654F /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5977263A24DD4A3300F8654F /* OrderService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5977261724DD339400F8654F /* ArteriaTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArteriaTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5977261A24DD339400F8654F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5977261C24DD339400F8654F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5977261E24DD339400F8654F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5977262124DD339400F8654F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5977262324DD339A00F8654F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5977262624DD339A00F8654F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5977262824DD339A00F8654F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5977263124DD357B00F8654F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		5977263324DD3B3700F8654F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		5977263424DD3B3700F8654F /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		5977263724DD4A0300F8654F /* OrderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfo.swift; sourceTree = "<group>"; };
+		5977263A24DD4A3300F8654F /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,51 @@
 		5977261924DD339400F8654F /* ArteriaTask */ = {
 			isa = PBXGroup;
 			children = (
+				5977263924DD4A1500F8654F /* Networking */,
+				5977263024DD355B00F8654F /* View */,
+				5977262F24DD355200F8654F /* Model */,
+				5977262E24DD354000F8654F /* ViewController */,
 				5977261A24DD339400F8654F /* AppDelegate.swift */,
 				5977261C24DD339400F8654F /* SceneDelegate.swift */,
-				5977261E24DD339400F8654F /* ViewController.swift */,
 				5977262024DD339400F8654F /* Main.storyboard */,
 				5977262324DD339A00F8654F /* Assets.xcassets */,
 				5977262524DD339A00F8654F /* LaunchScreen.storyboard */,
 				5977262824DD339A00F8654F /* Info.plist */,
 			);
 			path = ArteriaTask;
+			sourceTree = "<group>";
+		};
+		5977262E24DD354000F8654F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5977263124DD357B00F8654F /* ListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5977262F24DD355200F8654F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5977263724DD4A0300F8654F /* OrderInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5977263024DD355B00F8654F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5977263324DD3B3700F8654F /* ListTableViewCell.swift */,
+				5977263424DD3B3700F8654F /* ListTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5977263924DD4A1500F8654F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5977263A24DD4A3300F8654F /* OrderService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5977262724DD339A00F8654F /* LaunchScreen.storyboard in Resources */,
+				5977263624DD3B3700F8654F /* ListTableViewCell.xib in Resources */,
 				5977262424DD339A00F8654F /* Assets.xcassets in Resources */,
 				5977262224DD339400F8654F /* Main.storyboard in Resources */,
 			);
@@ -138,9 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5977261F24DD339400F8654F /* ViewController.swift in Sources */,
 				5977261B24DD339400F8654F /* AppDelegate.swift in Sources */,
+				5977263524DD3B3700F8654F /* ListTableViewCell.swift in Sources */,
+				5977263B24DD4A3300F8654F /* OrderService.swift in Sources */,
+				5977263224DD357B00F8654F /* ListViewController.swift in Sources */,
 				5977261D24DD339400F8654F /* SceneDelegate.swift in Sources */,
+				5977263824DD4A0300F8654F /* OrderInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
