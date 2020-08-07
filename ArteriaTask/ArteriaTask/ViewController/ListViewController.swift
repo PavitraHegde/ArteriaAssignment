@@ -11,9 +11,8 @@ import UIKit
 class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var itemList: [Result]?
     var order: OrderDetails?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
@@ -22,20 +21,16 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemList?.count ?? 0
+        return order?.d.results.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell") as! ListTableViewCell
-        let item = itemList?[indexPath.row]
+        let item = order?.d.results[indexPath.row]
         cell.orderId.text = item?.soNo
         cell.orderDate.text = item?.orderDate
-        
-        // cell.orderImage.image =
         return cell
     }
-    
-    
 }
 
 extension ListViewController: UITableViewDelegate {

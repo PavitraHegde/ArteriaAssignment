@@ -15,7 +15,7 @@ class OrderService {
     
     var dataTask: URLSessionTask?
     
-    func fetchListScreenItems(topValue: Int, completionHandler: @escaping (_ errorMessage: String?, _ response: OrderDetails?) -> Void) {
+    func fetchListScreenItems(topValue: Int,completionHandler: @escaping (_ errorMessage: String?, _ response: OrderDetails?) -> Void) {
         
         let userName: String = "P2000107764"
         let password: String = "Welcome@12345"
@@ -36,18 +36,7 @@ class OrderService {
             urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
             urlRequest.addValue("com.arteriatech.mDealerConnect", forHTTPHeaderField: "x-smp-appid")
             urlRequest.addValue("Basic \(authValue)", forHTTPHeaderField: "Authorization")
-    
-//
-//
-//            let jsonEncoder = JSONEncoder()
-//            do {
-//                let body =  try jsonEncoder.encode(topValue)
-//                urlRequest.httpBody = body
-//            } catch  {
-//                completionHandler(error.localizedDescription, nil)
-//                return
-//            }
-//
+
             dataTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
                 if let error = error {
                     completionHandler(error.localizedDescription, nil)
@@ -59,8 +48,8 @@ class OrderService {
                     let jsonDecoder = JSONDecoder()
                     
                     do {
-                        let booksInfoResponse = try jsonDecoder.decode(OrderDetails.self, from: responseData)
-                        completionHandler(nil,booksInfoResponse)
+                        let listInfoResponse = try jsonDecoder.decode(OrderDetails.self, from: responseData)
+                        completionHandler(nil,listInfoResponse)
                     } catch  {                    completionHandler(error.localizedDescription, nil)
                     }
                 } else {
