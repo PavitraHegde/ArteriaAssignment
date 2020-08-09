@@ -29,6 +29,7 @@ extension ListViewController: UITableViewDataSource {
         let item = order?.d.results[indexPath.row]
         cell.orderId.text = item?.soNo
         cell.orderDate.text = item?.orderDate
+        cell.orderImage.image = UIImage(named: "ShippingGreen")
         return cell
     }
 }
@@ -41,8 +42,11 @@ extension ListViewController {
     func initialSetup() {
         let nib = UINib(nibName: "ListTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ListTableViewCell")
+        
+        var queryParams = [String: String]()
+        queryParams["$top"] = "10"
         let items = OrderService()
-        items.fetchListScreenItems(topValue: 10) { (error, response) in
+        items.fetchListScreenItems(query: queryParams) { (error, response) in
             
             if let error = error {
                 print(error)
